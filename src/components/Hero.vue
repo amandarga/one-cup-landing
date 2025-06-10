@@ -14,7 +14,7 @@
         satisfação dos seus clientes com praticidade e inovação.
       </p>
       <button
-        class="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold py-3 px-6 rounded-xl shadow-md transition-all duration-200"
+        class="bg-orange-500 hover:bg-orange-700 text-white text-lg font-semibold py-3 px-6 rounded-xl shadow-md transition-all duration-200"
       >
         Quero testar grátis
       </button>
@@ -23,7 +23,7 @@
       </p>
     </div>
     <div class="hidden md:block">
-      <img src="/src/assets/OneCup - Mockup.png" alt="App OneCup" class="w-[700px] rounded-2xl" />
+      <img src="/src/assets/OneCup-Mockup.png" alt="App OneCup" class="w-[700px] rounded-2xl" />
     </div>
   </section>
 </template>

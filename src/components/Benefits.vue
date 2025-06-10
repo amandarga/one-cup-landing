@@ -1,46 +1,15 @@
 <template>
-  <section class="bg-white text-green-900 py-16 px-6 md:px-20">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="bg-coffe text-[#622d09] py-16 px-6 md:px-20">
+    <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-10">Por que usar o OneCup?</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
-        <div class="flex items-start gap-4">
-          <span class="text-green-600 text-2xl">✅</span>
-          <div>
-            <h3 class="font-semibold text-lg">Evita filas e aglomerações</h3>
-            <p class="text-sm text-green-800">Clientes entram na fila de forma digital, sem espera física.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <span class="text-green-600 text-2xl">📲</span>
-          <div>
-            <h3 class="font-semibold text-lg">Experiência rápida e moderna</h3>
-            <p class="text-sm text-green-800">Interface simples, mobile-first e amigável.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <span class="text-green-600 text-2xl">📊</span>
-          <div>
-            <h3 class="font-semibold text-lg">Dados em tempo real</h3>
-            <p class="text-sm text-green-800">Veja reservas, cancelamentos e filas ao vivo.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <span class="text-green-600 text-2xl">🔒</span>
-          <div>
-            <h3 class="font-semibold text-lg">Segurança e estabilidade</h3>
-            <p class="text-sm text-green-800">Validação de dados e 99% de uptime.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <span class="text-green-600 text-2xl">🖥️</span>
-          <div>
-            <h3 class="font-semibold text-lg">Responsivo e acessível</h3>
-            <p class="text-sm text-green-800">Funciona bem em todos os dispositivos e navegadores.</p>
-          </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div
+          v-for="(card, index) in cards"
+          :key="index"
+          class="bg-[#622d09] rounded-2xl shadow-md p-6 flex flex-col items-start text-left hover:shadow-lg transition-shadow duration-300">
+          <img :src="card.icon" alt="" class="w-10 h-10 mb-4" />
+          <h3 class="font-bold text-[#dcbda5] text-lg mb-2">{{ card.title }}</h3>
+          <p class="text-sm text-[white]">{{ card.description }}</p>
         </div>
       </div>
     </div>
@@ -48,5 +17,51 @@
 </template>
 
 <script setup>
-// Nenhum script necessário no momento
+import movel from '../assets/botao-movel.png'
+import raio from '../assets/parafuso-2.png'
+import graficohistograma from '../assets/grafico-histograma.png'
+import trancar from '../assets/trancar.png'
+import computador from '../assets/computador.png'
+import apertodemao from '../assets/aperto-de-mao.png'
+
+const cards = [
+  {
+    icon: movel,
+    title: 'Evita filas e aglomerações',
+    description: 'Clientes entram na fila de forma digital, sem espera física.',
+  },
+  {
+    icon: raio,
+    title: 'Experiência rápida e moderna',
+    description: 'Interface simples, mobile-first e amigável.',
+  },
+  {
+    icon: graficohistograma,
+    title: 'Dados em tempo real',
+    description: 'Veja reservas, cancelamentos e filas ao vivo.',
+  },
+  {
+    icon: trancar,
+    title: 'Segurança e estabilidade',
+    description: 'Validação de dados e 99% de uptime.',
+  },
+  {
+    icon: computador,
+    title: 'Responsivo e acessível',
+    description: 'Funciona bem em todos os dispositivos e navegadores.',
+  },
+  {
+    icon: apertodemao,
+    title: 'Fidelização de clientes',
+    description: 'Ofereça uma experiência que faz o cliente voltar.',
+  },
+];
 </script>
+
+<style>
+.bg-coffe {
+  background-image: url('/src/assets/One-Cup-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
